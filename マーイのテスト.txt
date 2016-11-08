@@ -1,0 +1,38 @@
+<input list="browsers" name="browser">
+                                                                    <datalist id="browsers">
+                                                                        <option value="Internet Explorer">
+                                                                            <option value="Firefox">
+                                                                                <option value="Chrome">
+                                                                                    <option value="Opera">
+                                                                                        <option value="Safari">
+                                                                                            <?php 
+                                                                                            $dbhost="localhost";
+                                                                                            $dbname="homevisit";
+                                                                                            $dbuser="root";
+                                                                                            $dbpass="";
+                                                                                            mysql_query("SET NAMES UTF8");
+                                                                                            mysql_query("SET character_set_results=utf8");
+                                                                                            mysql_query("SET character_set_client=utf8");
+                                                                                            mysql_query("SET character_set_connection=utf8");
+
+                                                                                            mysql_connect($dbhost,$dbuser,$dbpass) or die("ติดต่อฐานข้อมูลไม่ได้");
+                                                                                            mysql_select_db($dbname) or die("เลือกฐานข้อมูลไม่ได้");
+
+                                                                                            $sql2="SELECT icd10_id,icd10_name,icd10_keyword from icd10 ORDER by icd10_keyword DESC ";
+                                                                                            $result2=mysql_query($sql2);
+                                                                                            $num_rows=mysql_num_rows($result2);
+                                                                                            
+                                                                                            echo "<option value=\"{$num_rows}\">";
+                                                                                            $list=0;
+                                                                                            while($list<10)
+                                                                                                {
+                                                                                                    $result=mysql_fetch_array($result2);
+                                                                                                    $id_icd10=$result["icd10_id"];
+                                                                                                    $name_icd10=$result["icd10_name"];
+                                                                                                    $keyw_icd10=$result["icd10_keyword"];
+                                                                                                    echo"<option value='$id_icd10 $name_icd10' class='normal'>$keyw_icd10&nbsp;$id_icd10&nbsp;$name_icd10";
+                                                                                                    $list++;
+                                                                                                }
+                                                                                            mysql_close();
+                                                                                            ?>
+                                                                    </datalist>

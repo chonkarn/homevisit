@@ -1,0 +1,184 @@
+<div class="tab-pane fade" id="part2-panel">
+    <h6 class="mdl-typography--title mdl-color-text--green">ส่วนที่ 2: ข้อมูลสุขภาพ</h6>
+    <h6 class="mdl-typography--title">ประวัติการรักษา</h6>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> การผ่าตัด </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--2-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="surgery-1" onclick="surgery_check()">
+                        <input type="radio" id="surgery-1" class="mdl-radio__button" name="surgery" value="1" checked> <span class="mdl-radio__label">ไม่มี</span> </label>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="surgery-2" onclick="surgery_check()">
+                        <input type="radio" id="surgery-2" class="mdl-radio__button" name="surgery" value="2"> <span class="mdl-radio__label">มี</span> </label>
+                </div>
+                <div class="mdl-cell--10-col" id="div_surgery" style="visibility:hidden;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname">
+                        <label class="mdl-textfield__label" for="fname">ระบุ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> การแพ้ยา/แพ้อาหาร </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--2-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="allgeric-1" onclick="allgeric_check()">
+                        <input type="radio" id="allgeric-1" class="mdl-radio__button" name="allgeric" value="1" checked> <span class="mdl-radio__label">ไม่มี</span> </label>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="allgeric-2" onclick="allgeric_check()">
+                        <input type="radio" id="allgeric-2" class="mdl-radio__button" name="allgeric" value="2"> <span class="mdl-radio__label">มี</span> </label>
+                </div>
+                <div class="mdl-cell--10-col" id="div_allgeric" style="visibility:hidden;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname">
+                        <label class="mdl-textfield__label" for="fname">ระบุ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> แพทย์ทางเลือก </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--2-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="alternative-1" onclick="alternative_check()">
+                        <input type="radio" id="alternative-1" class="mdl-radio__button" name="alternative" value="1" checked> <span class="mdl-radio__label">ไม่มี</span> </label>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="alternative-2" onclick="alternative_check()">
+                        <input type="radio" id="alternative-2" class="mdl-radio__button" name="alternative" value="2"> <span class="mdl-radio__label">มี</span> </label>
+                </div>
+                <div class="mdl-cell--10-col" id="div_alternative" style="visibility:hidden;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+                        <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname">
+                        <label class="mdl-textfield__label" for="fname">ระบุ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h6 class="mdl-typography--title">พฤติกรรมเสี่ยงในปัจจุบัน</h6>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> สุรา </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--12-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="alcohol-1" onclick="alcohol_check()">
+                        <input type="radio" id="alcohol-1" class="mdl-radio__button" name="alcohol" value="1" checked> <span class="mdl-radio__label"><u>ไม่</u>เคยดื่ม</span> </label>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="alcohol-2" onclick="alcohol_check()">
+                        <input type="radio" id="alcohol-2" class="mdl-radio__button" name="alcohol" value="2"> <span class="mdl-radio__label">ดื่มอยู่</span> </label>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="alcohol-3" onclick="alcohol_check()">
+                        <input type="radio" id="alcohol-3" class="mdl-radio__button" name="alcohol" value="3"> <span class="mdl-radio__label">เลิกดื่มแล้ว</span> </label>
+                </div>
+                <div name="div_alcohol" id="div_alcohol" class="mdl-cell--12-col" style="visibility:hidden;">
+                    <h5 class="mdl-typography--subhead">ถ้าเคยดื่ม หรือ กำลังดื่มอยู่</h5>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="drink">
+                        <input type="checkbox" id="drink" class="mdl-checkbox__input" name="alcohol_input"> <span class="mdl-checkbox__label">มีปัญหา เกี่ยวกับการดื่ม</span> </label>
+                </div>
+            </div>
+            <hr> </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> บุหรี่ </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="cigarette-1" onclick="cigarette_check()">
+                    <input type="radio" id="cigarette-1" class="mdl-radio__button" name="cigarette" value="1" checked> <span class="mdl-radio__label"><u>ไม่</u>เคยสูบ</span> </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="cigarette-2" onclick="cigarette_check()">
+                    <input type="radio" id="cigarette-2" class="mdl-radio__button" name="cigarette" value="2"> <span class="mdl-radio__label">สูบอยู่</span> </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="cigarette-3" onclick="cigarette_check()">
+                    <input type="radio" id="cigarette-3" class="mdl-radio__button" name="cigarette" value="3"> <span class="mdl-radio__label">เลิกสูบแล้ว</span> </label>
+                <div class="mdl-grid" id="div_cigarette" style="visibility:hidden;">
+                    <h5 class="mdl-typography--subhead">ถ้าท่านกำลังสูบ หรือเลิกสูบแล้ว โปรดระบุปริมาณการสูบบุหรี่</h5>
+                    <div class="mdl-cell--4-col">
+                        <div class="mdl-textfield">จำนวนมวน</div>
+                    </div>
+                    <div class="mdl-cell--8-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="[^0-9]" id="fname" name="cigarette_amout">
+                            <label class="mdl-textfield__label" for="fname">จำนวนมวน / วัน</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                    </div>
+                    <div class="mdl-cell--4-col">
+                        <div class="mdl-textfield">ระยะเวลาการสูบ</div>
+                    </div>
+                    <div class="mdl-cell--8-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="[^0-9]" id="fname" name="cigarette_period">
+                            <label class="mdl-textfield__label" for="fname">ระยะเวลาการสูบ / ปี</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h6 class="mdl-typography--title">ประวัติครอบครัว</h6>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> สถานะทางการเงิน
+            <div id="tt4" class="icon material-icons">info_outline</div>
+            <div class="mdl-tooltip" for="tt4"> (เพิ่ม help)
+                <br>การงานมีปัญหาคือระดับใด? </div>
+        </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--12-col">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="money">
+                        <input type="checkbox" id="money" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">มีปัญหา</span> </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell--4-col"> ประวัติโรคในครอบครัว </div>
+        <div class="mdl-cell--8-col">
+            <div class="mdl-grid">
+                <div class="mdl-cell--12-col">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="hypertension">
+                        <input type="checkbox" id="hypertension" name="hypertension" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">Hypertension</span> </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="diabetes-mellitus">
+                        <input type="checkbox" id="diabetes-mellitus" name="diabetes-mellitus" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">Diabetes mellitus</span> </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="dyslipidemia">
+                        <input type="checkbox" id="dyslipidemia" name="dyslipidemia" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">Dyslipidemia</span> </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="stroke">
+                        <input type="checkbox" id="stroke" name="stroke" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">Stroke</span> </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="cad">
+                        <input type="checkbox" id="cad" name="cad" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">CAD</span> </label>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell--4-col">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="cancer">
+                        <input type="checkbox" id="cancer" name="cancer" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">cancer:</span> </label>
+                </div>
+                <div class="mdl-cell--8-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" pattern="[^0-9]" id="fname" name="cancer_input">
+                        <label class="mdl-textfield__label" for="fname">ระบุ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell--4-col">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="other">
+                        <input type="checkbox" id="other" name="other" class="mdl-checkbox__input"> <span class="mdl-checkbox__label">อื่นๆ:</span> </label>
+                </div>
+                <div class="mdl-cell--8-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" pattern="[^0-9]" id="fname" name="other_input">
+                        <label class="mdl-textfield__label" for="fname">ระบุ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="mdl-grid">
+        <a href="#part1-panel" data-toggle="tab" title="">
+            <button class="mdl-button mdl-js-button mdl-button--accent mdl-typography--button"> <i class="material-icons">keyboard_arrow_left</i> ย้อนกลับ </button>
+        </a>
+        <div class="mdl-layout-spacer"></div>
+        <a href="#part3-panel" data-toggle="tab" title="">
+            <button class="mdl-button mdl-js-button mdl-button--accent mdl-typography--button"> ต่อไป <i class="material-icons">keyboard_arrow_right</i> </button>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="tab-pane fade in active" id="check-hn-panel">
+                                        <h6 class="mdl-typography--title mdl-color-text--green">ตรวจสอบเลขที่โรงพยาบาล</h6>
+
+                                        <div class="mdl-grid">
+                                            <div class="mdl-cell--4-col">
+                                                <div class="mdl-textfield">เลขที่โรงพยาบาล</div>
+                                            </div>
+                                            <div class="mdl-cell--8-col">
+                                                
+                                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="hn">
+                                                        <label class="mdl-textfield__label" for="hn">เลขที่โรงพยาบาล</label>
+                                                        <span class="mdl-textfield__error">ข้อมูลนี้ไม่ใช่ตัวเลข</span>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="mdl-grid">
+                                            <div class="mdl-cell--4-col">
+                                                สถานะเยี่ยมบ้าน
+                                            </div>
+                                            <div class="mdl-cell--8-col">
+                                                ใหม่
+                                            </div>
+                                        </div>
+
+                                        <div class="mdl-grid">
+                                            <div class="mdl-cell--4-col">
+                                                ประเภทการเยี่ยมบ้าน
+                                            </div>
+                                            <div class="mdl-cell--8-col">
+                                                
+                                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="homevisit">
+                                                        <input type="radio" id="homevisit" class="mdl-radio__button" name="options" value="1" checked>
+                                                        <span class="mdl-radio__label">Home visit care</span>
+                                                    </label>
+                                                    <br>
+                                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="geriatric">
+                                                        <input type="radio" id="geriatric" class="mdl-radio__button" name="options" value="2">
+                                                        <span class="mdl-radio__label">Geriatric case </span>
+                                                    </label>
+                                                    <br>
+                                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="palliative">
+                                                        <input type="radio" id="palliative" class="mdl-radio__button" name="options" value="3">
+                                                        <span class="mdl-radio__label">Palliative case </span>
+                                                    </label>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <div class="mdl-grid">
+                                            <div class="mdl-layout-spacer"></div>
+                                            <a href="#part1-panel" data-toggle="tab" title="เริ่มกรอกข้อมูลส่วนที่ 1">
+                                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                                                    เริ่มกรอกข้อมูล
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>

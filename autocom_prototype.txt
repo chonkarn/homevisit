@@ -1,0 +1,86 @@
+﻿<script>
+  $(function () {
+    $("#insure").autocomplete({
+        minLength: 0
+        , source: "autocom_insure.php"
+        , open: function () {
+            var valInput = $(this).val();
+            if (valInput != "") {
+                $(".ui-menu-item a").each(function () {
+                    var matcher = new RegExp("(" + valInput + ")", "ig");
+                    var s = $(this).text();
+                    var newText = s.replace(matcher, "<b>$1</b>");
+                    $(this).html(newText);
+                });
+            }
+        }
+//        , select: function (event, ui) {
+//            $("#insure_hidden").val(ui.item.id);
+//        }
+    });
+//    $(".list_insure").click(function () {
+//        if ($("#insure").autocomplete("widget").is(":visible")) {
+//            $("#insure").autocomplete("close");
+//            return;
+//        }
+//        $("#insure").autocomplete("search", "");
+//        $("#insure").focus();
+//    });
+});
+$(function () {
+    $("#input").autocomplete({
+        minLength: 0
+        , source: "autocom_med_own.php"
+        , open: function () {
+            var valInput = $(this).val();
+            if (valInput != "") {
+                $(".ui-menu-item a").each(function () {
+                    var matcher = new RegExp("(" + valInput + ")", "ig");
+                    var s = $(this).text();
+                    var newText = s.replace(matcher, "<b>$1</b>");
+                    $(this).html(newText);
+                });
+            }
+        }
+        , select: function (event, ui) {
+            $("#h_input").val(ui.item.id);
+        }
+    });
+    $(".showAll").click(function () {
+        if ($("#input").autocomplete("widget").is(":visible")) {
+            $("#input").autocomplete("close");
+            return;
+        }
+        $("#input").autocomplete("search", "");
+        $("#input").focus();
+    });
+});
+$(function () {
+    $("#input3").autocomplete({
+        minLength: 0
+        , source: "autocom_med_visit.php"
+        , open: function () {
+            var valInput = $(this).val();
+            if (valInput != "") {
+                $(".ui-menu-item a").each(function () {
+                    var matcher = new RegExp("(" + valInput + ")", "ig");
+                    var s = $(this).text();
+                    var newText = s.replace(matcher, "<b>$1</b>");
+                    $(this).html(newText);
+                });
+            }
+        }
+        , select: function (event, ui) {
+            $("#h_input3").val(ui.item.id);
+        }
+    });
+    $(".showAll3").click(function () {
+        if ($("#input3").autocomplete("widget").is(":visible")) {
+            $("#input3").autocomplete("close");
+            return;
+        }
+        $("#input3").autocomplete("search", "");
+        $("#input3").focus();
+    });
+});  
+    </script>

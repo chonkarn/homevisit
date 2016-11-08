@@ -1,0 +1,360 @@
+
+    <div class="tab-pane fade in active" id="part1-panel">
+        <h6 class="mdl-typography--title mdl-color-text--green">ส่วนที่ 1: ข้อมูลทั่วไป</h6>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> รหัสโรงพยาบาล </div>
+            <div class="mdl-cell--8-col">
+                <input class="mdl-textfield__input" type="text" name="hn" style="visibility:hidden;" value="<?php echo $hn; ?>">
+                <?php echo $hn; ?>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> สถานะเยี่ยมบ้าน </div>
+            <div class="mdl-cell--8-col"> ใหม่ </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> ประเภทเยี่ยมบ้าน </div>
+            <div class="mdl-cell--8-col">
+                <input class="mdl-textfield__input" type="text" name="type" style="visibility:hidden;" value="<?php echo $type?>">
+                <?php echo $type?>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">เลขบัตรประชาชน</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[0-9]{13}" name="id-number" id="id-number">
+                    <label class="mdl-textfield__label" for="id-number">เลขบัตรประชาชน</label> <span class="mdl-textfield__error">ตัวเลขไม่ครบ 13 หลัก</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <p class="mdl-textfield">คำนำหน้า </p>
+            </div>
+            <div class="mdl-cell--8-col">
+                <select name="p_name">
+                    <?php
+                     droptext($p_name);
+                                ?>
+                </select>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <p class="mdl-textfield">ชื่อ-นามสกุล </p>
+            </div>
+            <div class="mdl-cell--8-col">
+                </select>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" name="fname" id="fname">
+                    <label class="mdl-textfield__label" for="fname">ชื่อ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" name="lname" id="lname">
+                    <label class="mdl-textfield__label" for="lname">นามสกุล</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> เพศ </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-grid">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="male">
+                        <input type="radio" id="male" class="mdl-radio__button" name="gender" value="1" checked> <span class="mdl-radio__label">ชาย</span> </label>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="female">
+                        <input type="radio" id="female" class="mdl-radio__button" name="gender" value="2"> <span class="mdl-radio__label">หญิง</span> </label>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> วันเกิด </div>
+            <div class="mdl-cell--8-col">
+                <select name="bday">
+                    <?php
+                                                        droploop($day);
+                                                    ?>
+                </select> /
+                <select name="bmonth">
+                    <?php
+            droptext($month);
+                                                    ?>
+                </select> /
+                <select name="byear">
+                    <?php
+                                                    droploop($year);
+                                                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> สถานภาพ </div>
+            <div class="mdl-cell--8-col">
+                <select name="status">
+                    <?php
+                                                    droptext($status);
+                                                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <p class="mdl-textfield">ศาสนา</p>
+            </div>
+            <div class="mdl-cell--8-col">
+                <select name="religion" id="religion" onchange="inputhidden(re)">
+                    <?php
+                                                    droptext($religion);
+                                                    ?>
+                </select>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="religion_input" id="religion_input" style="visibility:hidden;">
+                    <label class="mdl-textfield__label" for="fname" style="visibility:hidden;" id="religion_input_label">: ระบุ</label> <span class="mdl-textfield__error"></span> </div>
+                <!--            </form>-->
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> ระดับการศึกษา </div>
+            <div class="mdl-cell--8-col">
+                <select name="education" id="education" onchange="inputhidden(edu)">
+                    <?php
+                                                    droptext($education);
+                                                    ?>
+                </select>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="education_input" name="education_input" style="visibility:hidden;">
+                    <label class="mdl-textfield__label" for="fname" style="visibility:hidden;" id="education_input_label">: ระบุ</label> <span class="mdl-textfield__error">กรอกไม่ครบตามจำนวน</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> อาชีพ </div>
+            <div class="mdl-cell--8-col">
+                <select name="occupation" id="occupation" onchange="inputhidden(occ)">
+                    <?php
+                                                    droptext($occupation);
+                                                    ?>
+                </select>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="occupation_input" name="occupation_input" style="visibility:hidden;">
+                    <label class="mdl-textfield__label" for="fname" id="occupation_input_label" style="visibility:hidden;">: ระบุ</label> <span class="mdl-textfield__error">กรอกไม่ครบตามจำนวน</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> สิทธิการรักษา </div>
+            <!-- autosearch-->
+            <div class="mdl-cell--8-col">
+                <div>
+                    <input name="insure" id="insure" size="50" />
+<!--                    <input name="insure_hidden" type="hidden" value="" /> -->
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h6 class="mdl-typography--title">ข้อมูลการติดต่อ</h6>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">บ้านเลขที่</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="fname" name="add_no">
+                    <label class="mdl-textfield__label" for="fname">บ้านเลขที่</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">หมู่ที่</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname" name="add_mhoo">
+                    <label class="mdl-textfield__label" for="fname">หมู่ที่</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">อาคาร/หมู่บ้าน</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname" name="add_building_village">
+                    <label class="mdl-textfield__label" for="fname">อาคาร/หมู่บ้าน</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">ซอย</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="fname" name="add_soi">
+                    <label class="mdl-textfield__label" for="fname">ซอย</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">ถนน</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname" name="add_road">
+                    <label class="mdl-textfield__label" for="fname">ถนน</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">แขวง/ตำบล</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname" name="add_subdis">
+                    <label class="mdl-textfield__label" for="fname">แขวง/ตำบล</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">เขต/อำเภอ</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname" name="add_dis">
+                    <label class="mdl-textfield__label" for="fname">เขต/อำเภอ</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">จังหวัด</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[^0-9]*" id="fname" name="add_province">
+                    <label class="mdl-textfield__label" for="fname">จังหวัด</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">รหัสไปรษณีย์</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="[0-9]{5}" id="fname" name="add_zip">
+                    <label class="mdl-textfield__label" for="fname">รหัสไปรษณีย์</label> <span class="mdl-textfield__error">กรอกไม่ครบตามจำนวน</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> แผนที่บ้าน </div>
+            <div class="mdl-cell--8-col">
+                <!--            <button class="mdl-button mdl-js-button mdl-button--raised"> <i class="material-icons">add</i> เพิ่มแผนที่บ้าน </button>-->
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">โทรศัพท์บ้าน</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="fname" name="add_hno">
+                    <label class="mdl-textfield__label" for="fname">โทรศัพท์บ้าน</label> <span class="mdl-textfield__error">กรอกตัวเลขไม่ครบ</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">โทรศัพท์มือถือ</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="0[0-9]{8,9}" id="fname" name="add_mno">
+                    <label class="mdl-textfield__label" for="fname">โทรศัพท์มือถือ</label> <span class="mdl-textfield__error">กรอกตัวเลขไม่ครบ</span> </div>
+            </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col">
+                <div class="mdl-textfield">โทรศัพท์ที่ทำงาน</div>
+            </div>
+            <div class="mdl-cell--8-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="0[0-9]{8,9}" id="fname" name="add_ono">
+                    <label class="mdl-textfield__label" for="fname">โทรศัพท์ที่ทำงาน</label> <span class="mdl-textfield__error">กรอกตัวเลขไม่ครบ</span> </div>
+            </div>
+        </div>
+        <hr>
+        <h6 class="mdl-typography--title">ครอบครัว</h6>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> แผนผังครอบครัว </div>
+            <div class="mdl-cell--8-col">
+                <!--            <button class="mdl-button mdl-js-button mdl-button--raised"> <i class="material-icons">add</i> เพิ่มแผนผังครอบครัว </button>-->
+            </div>
+        </div>
+        <div class="mdl-grid" id="mai">
+            <div class="mdl-cell--4-col" id="mind1">
+                <div class="mdl-textfield" id="mind_label">ข้อมูลญาติ</div>
+            </div>
+            <div class="mdl-cell--8-col" id="mind">
+                
+                <div class="mdl-grid">
+                    <div class="mdl-cell--4-col">
+                        <div class="mdl-textfield">ชื่อ-นามสกุล</div>
+                    </div>
+                    <div class="mdl-cell--8-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="[^0-9]" id="fname" name="relate_flname">
+                            <label class="mdl-textfield__label" for="fname">ชื่อ-นามสกุล</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                    </div>
+                    <div class="mdl-cell--4-col">
+                        <div class="mdl-textfield">เกี่ยวข้องเป็น</div>
+                    </div>
+                    <div class="mdl-cell--8-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="[^0-9]" id="fname" name="relate_des">
+                            <label class="mdl-textfield__label" for="fname">เกี่ยวข้องเป็น</label> <span class="mdl-textfield__error">กรอกเพียงตัวอักษร</span> </div>
+                    </div>
+                    <div class="mdl-cell--4-col">
+                        <div class="mdl-textfield">เบอร์โทร</div>
+                    </div>
+                    <div class="mdl-cell--8-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="0[0-9]{9-10}" id="fname" name="relate_tel">
+                            <label class="mdl-textfield__label" for="fname">เบอร์โทร</label> <span class="mdl-textfield__error">กรอกไม่ครบตามจำนวน</span> </div>
+                    </div>
+                    
+<!--                    <input type="button" class="mdl-button mdl-js-button mdl-button--raised" value="+ เพิ่มข้อมูลญาติ " id="add_relate">  -->
+                </div>
+                
+            </div> 
+        </div>
+<div class="mdl-grid">
+                <div class="mdl-cell--4-col"></div>
+                <div class="mdl-cell--8-col"><input type="button" id="addDom" value="+ เพิ่มข้อมูลญาติ"></div>
+<!--            <input type="button" id="addDom" value="Add DOM element">-->
+            </div>
+        <hr>
+        <p class="mdl-typography--title">แพทย์ผู้ดูแล</p>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> แพทย์เจ้าของไข้ </div>
+            <!-- autosearch-->
+           <div class="mdl-cell--8-col">
+            <div>
+                <input name="med_own" id="med_own" size="50" />
+<!--                <input name="insure_hidden" type="hidden" id="h_input_q" value="" /> -->
+               </div>
+        </div>
+        </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col"> แพทย์เยี่ยมบ้าน </div>
+            <!-- autosearch-->
+            <div class="mdl-cell--8-col">
+                <div>
+                    <input name="input3" id="input3" size="50" />
+<!--                    <input name="h_input3" type="hidden" id="h_input3" value="" /> -->
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="mdl-grid">
+            <div class="mdl-layout-spacer"></div> <a href="#part2-panel" data-toggle="tab" title="ตรวจสอบรหัสโรงพยาบาล">
+                                                ต่อไป <i class="material-icons">keyboard_arrow_right</i>
+                                            </a> </div>
+    </div>
